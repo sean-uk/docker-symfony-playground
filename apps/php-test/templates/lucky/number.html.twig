@@ -3,5 +3,8 @@
     Lucky Number!
 {% endblock %}
 {% block body %}
-    <h1>Your lucky number is: {{ number }}</h1>
+    <div class="jumbotron">
+        <h1 class="display-4">Your lucky number is: {{ number }}</h1>
+        <p class="lead">That's right, your lucky number is <em>{{ number }}</em>, isn't that amazing!</p>
+    </div>
 {% endblock %}
