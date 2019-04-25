@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class LuckyController
+class LuckyController extends AbstractController
 {
     /**
      * @see https://symfony.com/doc/current/page_creation.html#creating-a-page-route-and-controller
@@ -18,7 +19,9 @@ class LuckyController
         $number = random_int(0, 100);
 
         // return it in a HTML response
-        $body = "<html><body>Lucky number: {$number}</body></html>";
-        return new Response($body);
+        $response = $this->render('lucky/number.html.twig', [
+            'number' => $number
+        ]);
+        return $response;
     }
 }
