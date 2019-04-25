@@ -20,3 +20,12 @@ services:
         env_file:
             - .env
         user: ${LOCAL_USER}
+        depends_on:
+          - composer
+    composer:
+        image: composer:latest
+        volumes:
+            - './apps/php-test:/usr/src/php-test'
+        user: ${LOCAL_USER}
+        working_dir: '/usr/src/php-test'
+        command: composer install
