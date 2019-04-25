@@ -11,6 +11,6 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php -r "unlink('composer-setup.php');" \
     && mv composer /usr/local/bin/composer
 
-WORKDIR /usr/src/apps
+WORKDIR /usr/src/apps/php-test
 
-# RUN PATH=$PATH:/usr/src/apps/vendor/bin:bin
+RUN PATH=$PATH:/usr/src/apps/php-test/vendor/bin:bin
