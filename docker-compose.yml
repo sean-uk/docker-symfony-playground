@@ -28,3 +28,8 @@ services:
         user: ${LOCAL_USER}
         working_dir: '/usr/src/php-test'
         command: composer install
+    frontend:
+        image: kkarczmarczyk/node-yarn
+        volumes:
+            - './apps/php-test:/workspace'
+        user: ${LOCAL_USER}
